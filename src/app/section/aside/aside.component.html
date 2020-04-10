@@ -1,0 +1,51 @@
+<div clas="col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align:center;"> AJOUT D'UN MEMBRE</div>
+        <div class="panel-body">
+            <form (ngSubmit)="onSubmit()" [formGroup]="formulaire" class="form-group">
+
+                <div class="form-group">
+
+                    <div class="form-group">
+                        <label for="nom" class="label-control">
+                        Nom d'utilisateur:
+                        </label>
+                        <input type="text" placeholder="ENTREZ VOTRE NOM D'UTILISATEUR" id="nom" class="form-control " formControlName="nom" ngModel required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prenom" class="label-control">
+                            Prénom:
+                        </label>
+                        <input type="text"  placeholder="ENTREZ VOTRE PRENOM" id="prenom" class="form-control " formControlName="prenom" ngModel required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login" class="label-control">
+                            Login:
+                        </label>
+                        <input type="text"  placeholder="ENTREZ VOTRE LOGIN" id="login" class="form-control " formControlName="login" ngModel required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date" class="label-control">
+                            Date de Naissance:
+                        </label>
+                        <input type="date" placeholder="ENTREZ VOTRE DATE DE NAISSANCE" id="date" class="form-control " formControlName="date" required>
+                    </div>
+
+                    <div class="form-group" class="label-control">
+                        <label for="lieu">
+                            Lieu:
+                        </label>
+                        <input type="text"  placeholder="ENTREZ VOTRE LIEU DE NAISSANCE" id="lieu" class="form-control " formControlName="lieu" ngModel required>
+                    </div>
+
+                    <input type="reset" value="ANNULER" class="btn btn-danger"  style="float: left; margin-top: 1%;" />
+                    <input type="submit" value="VAIDER" [disabled]="formulaire.invalid" class="btn btn-primary" style="float: right; margin-top: 1%;"/>
+                
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

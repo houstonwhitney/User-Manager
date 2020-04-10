@@ -1,0 +1,16 @@
+.section{
+    display: inline-block;
+    width:97% ;
+}
+
+app-aside{
+    width: 30%;
+    float: left;
+    margin-left: 2%;
+}
+
+app-article{
+    width:66%;
+    float: right;
+    margin-left: 1%;
+}

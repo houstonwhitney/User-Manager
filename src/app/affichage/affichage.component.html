@@ -1,0 +1,38 @@
+<div clas="col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align:center;" >AFFICHAGE DES ADMINISTRATEURS</div>
+        <div class="panel-body">
+            <div class="panel">
+                <form class="form-inline">
+                    <label for="name" >RECHERCHER:</label>
+                    <input type="search" placeholder="faites votre recherche" id="name" class="form-control "  title="recherche"/>
+                    <button type="submit" name="RECHERCHER" class="btn btn-success" >RECHERCHER</button>
+                </form>
+            </div>
+            <div style=" overflow: auto scroll; height:400px; width: 100%;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>NOM</th>
+                        <th>PRENOM</th>
+                        <th>LOGIN</th>
+                        <th>DATE DE NAISSANCE</th>
+                        <th>LIEU DE NAISSANCE</th>
+                        <th>STATUT</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                <tr *ngFor="let p of listePersonne" >
+                    <td *ngIf="p.getSatatus() === 'admin'">{{ p.getNom() }}</td>
+                    <td *ngIf="p.getSatatus() === 'admin'">{{ p.getPrenom() }}</td>
+                    <td *ngIf="p.getSatatus() === 'admin'">{{ p.getLogin() }}</td>
+                    <td *ngIf="p.getSatatus() === 'admin'">{{ p.getDateNaiss() | date: 'd-MM-y'}}</td>
+                    <td *ngIf="p.getSatatus() === 'admin'">{{ p.getLieuNaiss() }}</td> 
+                    <td *ngIf="p.getSatatus() === 'admin'">{{ p.getSatatus() }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>

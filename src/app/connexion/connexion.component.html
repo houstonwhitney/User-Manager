@@ -1,0 +1,26 @@
+<div class=" panel panneau" >
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="align-items: center;">
+            <h4 >CONNEXION</h4>
+        </div>
+
+        <div class="panel-body">
+            <form (ngSubmit)="onSubmit()" class="form-group" [formGroup]="form_con">
+                <div >
+                    <label for="login">LOGIN:</label>
+                    <input type="text" class="form-control" id="login" formControlName="login">
+                </div>
+                <div >
+                    <label for="password">PASSWORD:</label>
+                    <input type="password" class="form-control" id="password" formControlName="password">
+                </div>
+                <div >
+                    <button class="btn btn-danger" type="reset" style="float: left; margin-top: 2%;">ANNULER</button>
+                    <button class="btn btn-primary"   type="submit" style="float: right; margin-top: 2%;">VALIDER</button>
+                </div>
+            </form>
+            <p>{{ erreur }}</p>
+        </div>
+    </div>
+
+</div>

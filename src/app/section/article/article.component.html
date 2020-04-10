@@ -1,0 +1,60 @@
+<div clas="col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align:center;">AFFICHAGE DES MEMBES</div>
+        <div class="panel-body">
+            <div class="panel">
+                <form class="form-inline" [formGroup]="form_rech" (ngSubmit)="findUser()">
+                    <label for="rech">RECHERCHER:</label>
+                    <input style="margin-left: 5px; width: 400px;" type="search" placeholder="faites votre recherche" id="rech" class="form-control "
+                        title="recherche"  (keypress)="findUser()" formControlName="rech" [(ngModel)]="mot_clef" />
+                    <button type="submit" class="btn btn-success" style="margin-left: 5px;">RECHERCHER</button>
+                </form>
+            </div>
+            <div style=" overflow: auto scroll; height:337px; width: 100%;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>NOM</th>
+                        <th>PRENOM</th>
+                        <th>LOGIN</th>
+                        <th>DATE DE NAISSANCE</th>
+                        <th>LIEU DE NAISSANCE</th>
+                        <th>STATUT</th>
+                        <th>UPDATE</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr *ngFor="let p of listePersonne">
+                            <td>{{ p.getNom() }}</td>
+                            <td>{{ p.getPrenom() }}</td>
+                            <td>{{ p.getLogin() }}</td>
+                            <td>{{ p.getDateNaiss() | date: 'd-MM-y'}}</td>
+                            <td>{{ p.getLieuNaiss() }}</td>
+                            <td>
+                                <ul class="nav nav-pills">
+                                    <li class="active"> <a 
+                                            (click)="upStatus(p.getLogin())">{{ p.getSatatus() }}</a> </li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="nav nav-pills">
+                                    <li class="active"> <a >Modifier</a> </li>
+                                </ul>
+                            </td>
+                            <td><b>
+                                    <ul class="nav nav-pills">
+                                        <li style="background-color:#c9302c; border-radius: 5px;"><a
+                                                style=" color: white;" 
+                                                (click)="deletUser(p.getLogin())">Supprimer</a></li>
+                                    </ul>
+                                </b></td>
+
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+
+        </div>
+    </div>
+</div>
